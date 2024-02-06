@@ -1,0 +1,17 @@
+// Example of a block
+void (^simpleBlock)(void) = ^{
+    NSLog(@"This is a block!");
+};
+
+// Executing the block
+simpleBlock();
+// Avoid mutable state
+NSString *originalString = @"Hello";
+NSString *modifiedString = [originalString stringByAppendingString:@" World"];
+// Avoid mutable state
+// Example of using higher-order function
+NSArray *numbers = @[@1, @2, @3, @4];
+
+[numbers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    NSLog(@"Element at index %lu: %@", (unsigned long)idx, obj);
+}];
